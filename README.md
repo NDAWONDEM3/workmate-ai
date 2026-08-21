@@ -1,828 +1,319 @@
 # WorkMate AI
 
-Build a polished, presentation-ready web application called WorkMate AI, an AI-powered workplace productivity assistant.
+### Your intelligent workplace productivity assistant
 
-PROJECT PURPOSE
+WorkMate AI is an AI-powered workplace productivity assistant designed to help students, graduates, employees and professionals complete common workplace tasks faster and more effectively.
 
-WorkMate AI helps students, graduates, employees, managers and small-business professionals complete common workplace tasks faster using AI.
+The prototype demonstrates how AI and structured prompt engineering can support everyday professional activities such as communication, meeting management, task planning, research and workplace problem-solving.
 
-The application must demonstrate:
+## Project Overview
 
-Practical use of AI
+Workplace professionals spend significant time completing repetitive tasks such as writing emails, summarising meetings, organising tasks and researching information.
 
-Strong prompt engineering
+WorkMate AI brings these activities together in one simple interface.
 
-Multiple AI-powered workplace functions
+The project was developed as part of the **AI Skill Accelerator Programme** and focuses on practical AI application, prompt engineering, productivity improvement and responsible AI use.
 
-Productivity improvement
+## Features
 
-Responsible AI practices
+WorkMate AI includes all five core workplace productivity functions:
 
-A professional and modern user experience
+### 1. Smart Email Generator
 
-The prototype must be suitable for a live academic demonstration.
+Generate professional emails based on:
 
-IMPORTANT DEVELOPMENT CONSTRAINTS
+* Recipient type
+* Purpose
+* Tone
+* Key information
 
-This is a prototype and must be completed quickly.
+Supported tones include:
 
-DO NOT build:
+* Formal
+* Professional
+* Friendly
+* Persuasive
 
-User registration
+### 2. Meeting Notes Summarizer
 
-Login
+Convert lengthy meeting notes into structured information.
 
-Authentication
+The tool generates:
 
-Password management
+* Meeting summary
+* Key decisions
+* Action items
+* Responsibilities
+* Deadlines
+* Important points
 
-Supabase
+### 3. AI Task Planner
 
-Firebase
+Create structured daily or weekly plans.
 
-External database
+The planner considers:
 
-Complex backend
+* Task priority
+* Estimated duration
+* Available time
+* Urgency
+* Importance
 
-Admin dashboard
+### 4. AI Research Assistant
 
-Payment functionality
+Research workplace and academic topics using AI-generated responses.
 
-The application must work immediately when opened.
+Outputs include:
 
-Use browser local storage only where persistence is useful, such as recent activities or user preferences.
+* Quick answers
+* Key insights
+* Practical recommendations
+* Further research questions
 
-Do not require the user to create an account.
+The application also reminds users to verify important information against reliable sources.
 
-Do not make the user configure a database.
+### 5. AI Workplace Chatbot
 
-Do not make the user enter an external API key during normal use.
+Interact with WorkMate Assistant for workplace productivity questions.
 
-Use Lovable's available AI functionality for AI responses where supported.
+Example requests include:
 
-If a live AI integration is unavailable in the generated environment, create a polished demonstration fallback so every feature still produces realistic output, and the interface remains fully functional.
+* Preparing for meetings
+* Writing professional communication
+* Prioritising tasks
+* Improving workflows
+* Summarising information
 
-APPLICATION STRUCTURE
+## Prompt Engineering
 
-Create a responsive single-page application with the following structure:
+Prompt engineering forms an important part of WorkMate AI.
 
-1. LANDING / DASHBOARD
+The application uses structured prompts based on:
 
-Create a professional dashboard titled:
+**Role + Context + Task + Constraints + Output Format**
 
-WorkMate AI
+For example:
 
-Subtitle:
-
-Your intelligent workplace productivity assistant
-
-Include a short description:
-
-"WorkMate AI helps you write, summarise, plan, research and solve workplace tasks using AI."
-
-Display five main feature cards:
-
-Smart Email Generator
-
-Meeting Notes Summarizer
-
-AI Task Planner
-
-AI Research Assistant
-
-AI Workplace Chatbot
-
-Each card must contain:
-
-Icon
-
-Feature name
-
-Short description
-
-"Open Tool" button
-
-Also display a small productivity section showing:
-
-Tasks completed
-
-AI actions performed
-
-Estimated time saved
-
-These values may use local browser storage and sample/demo values.
-
-FEATURE 1: SMART EMAIL GENERATOR
-
-Create an AI-powered professional email generator.
-
-Inputs:
-
-Recipient type:
-
-Client
-
-Manager
-
-Team Member
-
-Lecturer
-
-Supplier
-
-Other
-
-Purpose:
-
-Request
-
-Follow-up
-
-Complaint
-
-Meeting
-
-Thank you
-
-Application
-
-General
-
-Tone:
-
-Formal
-
-Professional
-
-Friendly
-
-Persuasive
-
-Key information/message
-
-Add a prominent button:
-
-Generate Email
-
-The AI should generate:
-
-Subject
-
-Greeting
-
-Professional email body
-
-Closing
-
-Include buttons:
-
-Copy
-
-Regenerate
-
-Clear
-
-The prompt used internally should instruct the AI to avoid invented facts, maintain professional language and only use information supplied by the user.
-
-FEATURE 2: MEETING NOTES SUMMARIZER
-
-Create an AI tool for converting meeting notes into structured information.
-
-Input:
-
-Large text area titled:
-
-Paste your meeting notes
-
-Add optional fields:
-
-Meeting title
-
-Meeting date
-
-Participants
-
-Button:
-
-Summarize Meeting
-
-Output should contain four clearly separated sections:
-
-Summary
-
-A concise professional summary.
-
-Key Decisions
-
-Bullet-point list of decisions made.
-
-Action Items
-
-Show:
-
-Task
-
-Responsible person
-
-Deadline, when provided
-
-Important Points
-
-Important information discussed during the meeting.
-
-Add:
-
-Copy Summary
-
-Regenerate
-
-Clear
-
-The AI must not invent participants, deadlines, decisions or responsibilities.
-
-If information is missing, explicitly state "Not specified".
-
-FEATURE 3: AI TASK PLANNER
-
-Create an AI-powered task planning tool.
-
-Inputs:
-
-Tasks
-
-Available hours per day
-
-Start date
-
-End date
-
-Priority preference
-
-Allow users to enter multiple tasks.
-
-Each task should support:
-
-Task name
-
-Priority
-
-Estimated duration
-
-Priorities:
-
-High
-
-Medium
-
-Low
-
-Button:
-
-Generate Plan
-
-The AI should create a structured daily plan.
-
-Display:
-
-Date
-
-Time
-
-Task
-
-Priority
-
-Estimated duration
-
-Also display a small section:
-
-Why this plan works
-
-Explain how tasks were prioritised.
-
-Add:
-
-Regenerate Plan
-
-Copy Plan
-
-Clear
-
-Use urgency and importance when prioritising tasks.
-
-FEATURE 4: AI RESEARCH ASSISTANT
-
-Create a research assistant for quick workplace and academic research support.
-
-Inputs:
-
-Research topic
-
-Question
-
-Desired response length:
-
-Short
-
-Medium
-
-Detailed
-
-Button:
-
-Research Topic
-
-The output should contain:
-
-Quick Answer
-
-A concise answer to the question.
-
-Key Insights
-
-3 to 5 important points.
-
-Practical Recommendations
-
-Useful actions or recommendations based on the information provided.
-
-Further Questions
-
-Suggested questions the user could investigate.
-
-IMPORTANT:
-
-The assistant must not pretend to have browsed the internet when no browsing functionality exists.
-
-Include a visible responsible AI message:
-
-"AI-generated research should be verified against reliable sources before being used in academic, professional or business decisions."
-
-Do not generate fake citations or fake sources.
-
-FEATURE 5: AI WORKPLACE CHATBOT
-
-Create an interactive chatbot called:
-
-WorkMate Assistant
-
-The chatbot should support workplace productivity questions.
-
-Example prompts:
-
-"Help me prepare for a meeting."
-
-"Write a professional follow-up message."
-
-"Help me prioritise these tasks."
-
-"Summarise this information."
-
-"Give me ideas for improving my workflow."
-
-The interface should contain:
-
-Chat history
-
-User messages
-
-AI responses
-
-Message input
-
-Send button
-
-Clear conversation button
-
-Add suggested prompt buttons below the input.
-
-The chatbot should behave as a professional workplace assistant.
-
-It must clearly state when information requires verification.
-
-PROMPT ENGINEERING SECTION
-
-Add a dedicated page or expandable section called:
-
-How WorkMate AI Uses Prompt Engineering
-
-This section is important for the academic assessment.
-
-Show examples of the structured prompts used by the application.
-
-Explain the basic prompt structure:
-
-Role + Context + Task + Constraints + Output Format
-
-Example:
-
+```text
 Role:
-"You are a professional workplace communication assistant."
+You are a professional workplace communication assistant.
 
 Context:
-"The user needs to communicate with a manager."
+The user needs to communicate with their manager.
 
 Task:
-"Write a professional follow-up email."
+Write a professional follow-up email.
 
 Constraints:
-"Use only the information supplied by the user. Do not invent facts."
+Use only the information supplied by the user.
+Do not invent facts.
 
 Output:
-"Return a subject line followed by a professional email."
+Return a subject line followed by a professional email.
+```
 
-Also show a second example for meeting summarisation.
+Structured prompts help produce more consistent, relevant and useful AI outputs.
 
-Add a small section titled:
+## Responsible AI
 
-Why structured prompts improve AI output
+WorkMate AI includes responsible AI principles throughout the application.
 
-Explain that clear instructions, context, constraints and output formats help produce more consistent results.
+These include:
 
-RESPONSIBLE AI SECTION
+* Human review of AI-generated content
+* Verification of important information
+* Awareness of potential AI bias
+* Avoiding fabricated sources
+* Avoiding confidential information
+* Clear communication of AI limitations
 
-Create a visible Responsible AI panel.
+The application follows the principle:
 
-Include:
+> **AI-assisted. Human-reviewed.**
 
-AI Limitations
+Users remain responsible for reviewing AI-generated content before using it for important academic, professional or business decisions.
 
-AI-generated content may contain errors.
+## Technology
 
-Users should verify important information.
+The prototype uses:
 
-AI should not replace professional judgement.
+* **Lovable** for application development
+* **AI-powered generation** for workplace productivity tasks
+* **React** for the frontend
+* **TypeScript** for application logic
+* **Tailwind CSS** for styling
+* **Browser Local Storage** for lightweight prototype persistence
 
-Users should avoid entering confidential information.
+The application does not require:
 
-Research outputs should be checked against reliable sources.
+* User registration
+* Login
+* Passwords
+* A database
+* Supabase
+* Firebase
 
-Bias Awareness
+## Application Structure
 
-State:
-
-"AI outputs may reflect biases present in training data or user-provided information. Review outputs before using them in important decisions."
-
-Human Verification
-
-Display:
-
-AI assists your work. You remain responsible for reviewing the final output.
-
-Use an appropriate information icon.
-
-PRODUCTIVITY VALUE
-
-Add a section on the dashboard titled:
-
-Your Productivity Impact
-
-Display three metrics:
-
-AI Actions
-Number of completed AI actions.
-
-Estimated Time Saved
-Estimate time saved based on completed actions.
-
-Tools Used
-Number of WorkMate AI features used.
-
-Use local browser storage for these values.
-
-Do not require an account.
-
-USER EXPERIENCE
-
-Use a clean professional interface suitable for a corporate environment.
-
-Design style:
-
-Modern SaaS dashboard
-
-Clean cards
-
-Rounded corners
-
-Good spacing
-
-Professional typography
-
-Strong visual hierarchy
-
-Subtle animations
-
-Clear buttons
-
-Responsive design
-
-The interface must work well on:
-
-Desktop
-
-Laptop
-
-Tablet
-
-Mobile
-
-Use a consistent navigation sidebar on desktop.
-
-Navigation:
-
-Dashboard
-
-Email Generator
-
-Meeting Summarizer
-
-Task Planner
-
-Research Assistant
-
-AI Chatbot
-
-Prompt Engineering
-
-Responsible AI
-
-On mobile, convert the sidebar into a responsive navigation menu.
-
-DEMO MODE
-
-Because this is an academic prototype, make the application easy to demonstrate.
-
-Add a Load Demo Example button where appropriate.
-
-Demo examples should include:
-
-Email Example
-
-Recipient:
-Manager
-
-Purpose:
-Follow-up
-
-Tone:
-Professional
-
-Message:
-"Follow up with my manager regarding the status of my internship application."
-
-Meeting Example
-
-Use sample meeting notes discussing:
-
-Project progress
-
-Outstanding tasks
-
-Team responsibilities
-
-Upcoming deadline
-
-Task Planner Example
-
-Tasks:
-
-Complete project documentation
-
-Prepare presentation
-
-Review AI outputs
-
-Submit final project
-
-Research Example
-
-Topic:
-
-"How AI improves workplace productivity"
-
-Chatbot Example
-
-Question:
-
-"How should I prepare for a professional presentation?"
-
-The demo examples must make the application immediately usable during the presentation.
-
-ERROR HANDLING
-
-Add clear validation messages.
-
-Examples:
-
-If an input is empty:
-
-"Please provide information before generating a response."
-
-During AI generation:
-
-"WorkMate AI is thinking..."
-
-If generation fails:
-
-"We couldn't generate a response. Please try again."
-
-Do not expose technical errors to the user.
-
-VISUAL OUTPUT
-
-AI-generated content should appear inside polished result cards.
-
-Use:
-
-Headings
-
-Bullet points
-
-Tables where appropriate
-
-Highlighted priority badges
-
-Copy buttons
-
-Regenerate buttons
-
-Avoid displaying raw JSON or technical API responses.
-
-COPY FUNCTIONALITY
-
-Every generated result should have a Copy button.
-
-After copying, display:
-
-Copied to clipboard
-
-Use a small toast notification.
-
-CLEAR FUNCTIONALITY
-
-Each tool should have a Clear button.
-
-Clearing a tool should reset its inputs and generated output.
-
-RESPONSIVE DESIGN
-
-Ensure the entire application is responsive.
-
-On desktop:
-
-Use a sidebar plus main content area.
-
-On mobile:
-
-Use a top navigation bar or collapsible menu.
-
-Cards should stack vertically.
-
-Forms should remain easy to use on small screens.
-
-BRANDING
-
-Application name:
-
+```text
 WorkMate AI
+│
+├── Dashboard
+│
+├── Smart Email Generator
+│
+├── Meeting Notes Summarizer
+│
+├── AI Task Planner
+│
+├── AI Research Assistant
+│
+├── AI Workplace Chatbot
+│
+├── Prompt Engineering
+│
+└── Responsible AI
+```
 
-Tagline:
+## Demo
 
-Work smarter. Communicate better. Plan faster.
+The prototype includes demo examples to make testing and presentation easier.
 
-Use a professional AI-inspired visual identity.
+Example use cases include:
 
-Do not make the design look like a generic AI chatbot.
+**Email**
 
-The application should look like a real workplace productivity product.
+> Follow up with a manager regarding an internship application.
 
-IMPORTANT ACADEMIC REQUIREMENTS
+**Meeting**
 
-The prototype must clearly demonstrate at least three of the five required AI workplace functions.
+> Summarise project progress, outstanding tasks and upcoming deadlines.
 
-Preferably implement all five:
+**Task Planning**
 
-Smart Email Generator
+> Create a plan for completing project documentation and preparing a presentation.
 
-Meeting Notes Summarizer
+**Research**
 
-AI Task Planner
+> Explain how AI improves workplace productivity.
 
-AI Research Assistant
+**Chatbot**
 
-AI Chatbot Interface
+> How should I prepare for a professional presentation?
 
-The application must also visibly demonstrate:
+## Installation
 
-Prompt engineering
+Clone the repository:
 
-Responsible AI
+```bash
+git clone YOUR_REPOSITORY_URL
+```
 
-AI productivity improvement
+Navigate into the project:
 
-Professional workplace use
+```bash
+cd workmate-ai
+```
 
-Human verification
+Install dependencies:
 
-Ethical considerations
+```bash
+npm install
+```
 
-DO NOT OVERBUILD
+Start the development server:
 
-Prioritise functionality and presentation over unnecessary technical complexity.
-
-Do not add:
-
-Login
-
-User accounts
-
-Database
-
-Complex authentication
-
-Payment systems
-
-Social features
-
-Complex admin systems
-
-Unnecessary settings
-
-Features unrelated to workplace productivity
-
-The prototype must be fast, stable and easy to demonstrate.
-
-FINAL QUALITY CHECK
-
-Before completing the build, verify:
-
-Dashboard loads correctly.
-
-All five tools are accessible.
-
-Email Generator produces structured emails.
-
-Meeting Summarizer produces summaries, decisions and action items.
-
-Task Planner produces a prioritised schedule.
-
-Research Assistant produces structured research responses.
-
-Chatbot accepts multiple messages.
-
-Copy buttons work.
-
-Clear buttons work.
-
-Demo examples work.
-
-Loading states appear.
-
-Error messages appear when required.
-
-Responsible AI information is visible.
-
-Prompt Engineering section is visible.
-
-Responsive design works.
-
-No login is required.
-
-No database is required.
-
-No external account is required for normal prototype use.
-
-The interface looks professional enough for a live presentation.
-
-Do not leave unfinished placeholder sections.
-
-FINAL DASHBOARD MESSAGE
-
-At the bottom of the dashboard, display:
-
-WorkMate AI helps you spend less time on repetitive workplace tasks and more time on meaningful work.
-
-Include:
-
-AI-assisted. Human-reviewed.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3145b924-fdf1-480c-80a1-ab54ef584453).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
+
+Open the local development URL provided by the terminal.
+
+## Usage
+
+1. Open WorkMate AI.
+2. Select a productivity tool.
+3. Enter the required information.
+4. Select **Generate**.
+5. Review the AI-generated output.
+6. Copy or regenerate the result.
+7. Verify important information before using the output.
+
+## Project Objectives
+
+The project demonstrates the practical application of AI in a workplace environment.
+
+The main objectives are to:
+
+* Solve a real-world productivity problem.
+* Demonstrate effective prompt engineering.
+* Apply AI to multiple workplace tasks.
+* Improve productivity through automation.
+* Demonstrate responsible AI practices.
+* Provide a professional user experience.
+
+## Industry Relevance
+
+WorkMate AI demonstrates skills relevant to roles such as:
+
+* AI Prompt Engineer
+* Business Analyst
+* Digital Transformation Analyst
+* AI Productivity Specialist
+* Information Systems Analyst
+* Operations Analyst
+* Technology Graduate
+* Business Intelligence Analyst
+
+## Limitations
+
+WorkMate AI is an academic prototype.
+
+AI-generated information should be reviewed before use.
+
+The application should not be used as the sole basis for important legal, financial, medical, academic or business decisions.
+
+Research outputs should be verified against reliable sources.
+
+## Future Improvements
+
+Potential future improvements include:
+
+* User accounts
+* Cloud-based storage
+* Document upload
+* PDF and Word export
+* Calendar integration
+* Email platform integration
+* Advanced analytics
+* Personalised AI recommendations
+* Organisation-specific AI assistants
+
+These features are outside the scope of the current prototype.
+
+## Project Evaluation Focus
+
+The project was designed around the following areas:
+
+| Evaluation Area    | Implementation                               |
+| ------------------ | -------------------------------------------- |
+| Problem Relevance  | Workplace productivity                       |
+| Prompt Engineering | Structured AI prompts                        |
+| Functionality      | Five AI productivity tools                   |
+| Innovation         | Integrated workplace assistant               |
+| Responsible AI     | Verification, bias awareness and limitations |
+| Presentation       | Interactive responsive prototype             |
+
+## Author
+
+**Mweli Ndawonde**
+
+AI Skill Accelerator Programme
+
+South Africa
+
+## Disclaimer
+
+WorkMate AI is an educational prototype created to demonstrate practical applications of artificial intelligence, prompt engineering and responsible AI.
+
+AI outputs are generated for assistance and demonstration purposes. Users should review and verify outputs before relying on them.
