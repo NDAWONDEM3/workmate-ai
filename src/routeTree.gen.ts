@@ -14,7 +14,9 @@ import { Route as ChatRouteImport } from './routes/chat'
 import { Route as EmailRouteImport } from './routes/email'
 import { Route as MeetingsRouteImport } from './routes/meetings'
 import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as PromptsRouteImport } from './routes/prompts'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ResponsibleAiRouteImport } from './routes/responsible-ai'
 import { Route as ApiAiRouteImport } from './routes/api/ai'
 
 const IndexRoute = IndexRouteImport.update({
@@ -42,9 +44,19 @@ const PlannerRoute = PlannerRouteImport.update({
   path: '/planner',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PromptsRoute = PromptsRouteImport.update({
+  id: '/prompts',
+  path: '/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResearchRoute = ResearchRouteImport.update({
   id: '/research',
   path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResponsibleAiRoute = ResponsibleAiRouteImport.update({
+  id: '/responsible-ai',
+  path: '/responsible-ai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAiRoute = ApiAiRouteImport.update({
@@ -59,7 +71,9 @@ export interface FileRoutesByFullPath {
   '/email': typeof EmailRoute
   '/meetings': typeof MeetingsRoute
   '/planner': typeof PlannerRoute
+  '/prompts': typeof PromptsRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/api/ai': typeof ApiAiRoute
 }
 export interface FileRoutesByTo {
@@ -68,7 +82,9 @@ export interface FileRoutesByTo {
   '/email': typeof EmailRoute
   '/meetings': typeof MeetingsRoute
   '/planner': typeof PlannerRoute
+  '/prompts': typeof PromptsRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/api/ai': typeof ApiAiRoute
 }
 export interface FileRoutesById {
@@ -78,7 +94,9 @@ export interface FileRoutesById {
   '/email': typeof EmailRoute
   '/meetings': typeof MeetingsRoute
   '/planner': typeof PlannerRoute
+  '/prompts': typeof PromptsRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/api/ai': typeof ApiAiRoute
 }
 export interface FileRouteTypes {
@@ -89,7 +107,9 @@ export interface FileRouteTypes {
     | '/email'
     | '/meetings'
     | '/planner'
+    | '/prompts'
     | '/research'
+    | '/responsible-ai'
     | '/api/ai'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -98,7 +118,9 @@ export interface FileRouteTypes {
     | '/email'
     | '/meetings'
     | '/planner'
+    | '/prompts'
     | '/research'
+    | '/responsible-ai'
     | '/api/ai'
   id:
     | '__root__'
@@ -107,7 +129,9 @@ export interface FileRouteTypes {
     | '/email'
     | '/meetings'
     | '/planner'
+    | '/prompts'
     | '/research'
+    | '/responsible-ai'
     | '/api/ai'
   fileRoutesById: FileRoutesById
 }
@@ -117,7 +141,9 @@ export interface RootRouteChildren {
   EmailRoute: typeof EmailRoute
   MeetingsRoute: typeof MeetingsRoute
   PlannerRoute: typeof PlannerRoute
+  PromptsRoute: typeof PromptsRoute
   ResearchRoute: typeof ResearchRoute
+  ResponsibleAiRoute: typeof ResponsibleAiRoute
   ApiAiRoute: typeof ApiAiRoute
 }
 
@@ -158,11 +184,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlannerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prompts': {
+      id: '/prompts'
+      path: '/prompts'
+      fullPath: '/prompts'
+      preLoaderRoute: typeof PromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/research': {
       id: '/research'
       path: '/research'
       fullPath: '/research'
       preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/responsible-ai': {
+      id: '/responsible-ai'
+      path: '/responsible-ai'
+      fullPath: '/responsible-ai'
+      preLoaderRoute: typeof ResponsibleAiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/ai': {
@@ -181,7 +221,9 @@ const rootRouteChildren: RootRouteChildren = {
   EmailRoute: EmailRoute,
   MeetingsRoute: MeetingsRoute,
   PlannerRoute: PlannerRoute,
+  PromptsRoute: PromptsRoute,
   ResearchRoute: ResearchRoute,
+  ResponsibleAiRoute: ResponsibleAiRoute,
   ApiAiRoute: ApiAiRoute,
 }
 export const routeTree = rootRouteImport
